@@ -1,0 +1,88 @@
+Key Topics
+AngularJS
+- Understand basic template concepts (2A-Databinding)
+- (Ng-)Model
+- & Ng-Repeat
+Testing Framework
+- Jasmin
+- Mocha
+Other Helpful Courses
+- AngularJS: Get Started - Scott Allen
+- AngularJS Fundamentals - Joe Eames
+- Testing Client Side JavaScript - Joe Eames
+- Testing AngularJS from Scratch - Jesse Liberty
+What is Protractor?
+End-to-End					Unit Testing
+- Interact with the entire application stack	- Interact with a single, isolated unit at a time
+- Focused on what the user experiences		- Focused on the functionality of the code
+- Runs in a browser				- Runs in the console
+
+Test Framework for AngularJS Applications
++ Wait for Angular
+Example: Bring up new page in Angular & make HTTP-Request out to an API
+=> Protractor can monitor that Request & know that Angular will not be ready to display that data untill Request comes back
++ Get elements by bindings
+=> Protractor knows that its a binding
++ Get elements by repeaters
+=> Protractor can get into Repeaters(ng-repeat), it knows about ng-model & ng-repeat
+==================================================================================================================================
+Why Use Protractor
+Test/Think Like a User
+- Actions are rarely stand alone
+- A user only has access too what is displayed
+=> User sees that data is not displayed, Dev only sees that data in DB has changed
+- Systems have many different personas
+To improve test efficiency
+Develop Feature -> Test Feature -> Integrate Feature -> Test Previous Features(don't break other features) -> Release
+Cycle of Tests
+- Have to make sure it works
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Happy-Path => Enter all the Right-Data
+Weird-Data => Click buttons that should not be clicked yet, we enter a name thats too long, forget to put in zip-code
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- Benefit of the doubt
+There might be side effects with another feature (my code breaks others code)
+- So many features to test
+Overwhelming, because features grow with software
+
+Pain Points
+- Repetitive
+Keep testing the same feature, we enter a name thats too long, forget to put in zip-code
+
+Protractor
+- Doesn't mind repetition
+- Always remembers to check everything
+- Runs while you're working
+===================================================================================================================================
+npm install -g protractor	#-g: Install globaly
+#Protractor is build upon Selenium
+webdriver-manager update
+webdriver-manager start
+http://127.0.0.1:4444/wd/hub	# Default
+====================================================================================================================================
+https://github.com/taylonr/intro-to-protractor
+Run npm install		#Download nodes needed
+Run bower install	#Browser Package Manager (Angular & other JS Lib)
+Start MongoDB		#Simple Document Store
+Run grunt		#A JS Build Tool, take CSS Files, also have ability to run tests & run nodeserver for us
+http://localhost:3000/#!/EventRatings/new
+=====================================================================================================================================
+Prerequisites
+Make sure you have installed all these prerequisites on your development machine.
+    Node.js - Download & Install Node.js and the npm package manager, if you encounter any problems, you can also use this Github Gist to install Node.js.
+    MongoDB - Download & Install MongoDB, and make sure it's running on the default port (27017). https://www.mongodb.com/download-center
+    Bower - You're going to use the Bower Package Manager to manage your front-end packages, in order to install it make sure you've installed Node.js and npm, then install bower globally using npm:
+$ npm install -g bower
+    Grunt - You're going to use the Grunt Task Runner to automate your development process, in order to install it make sure you've installed Node.js and npm, then install grunt globally using npm:
+$ sudo npm install -g grunt-cli
+!!!!!!
+npm install -g nvmw          # Install nvmw globally
+nvmw install 6.5.0        # Install a specific version number
+nvmw use 6.5.0            # Use the specific version
+
+
+npm install jasmine-core --save-dev
+E:\IT\intro-to-protractor\
+npm install grunt --save-dev
+
+
