@@ -6,6 +6,7 @@ https://nodejs.org/en/download/
 NodeJS: JS-Framework to manage installed Nodes (1 Node is Protractor)
 4. CMD: npm install -g protractor
 #-g: global: if we install protractor globally, we can access protractor from everywhere
+# Wechsle zum NodeJS installations Pfad!!!
 5. CMD: protractor --version
 6. CMD: npm -g list
 We also installed Selenium Webdriver with Protractor, for Selenium Webdriver you need JDK

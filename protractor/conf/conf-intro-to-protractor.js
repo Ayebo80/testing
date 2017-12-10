@@ -1,6 +1,6 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['./ratings/event.list.item.spec.js'],
+    specs: ['../test/create.event.js'],
 
     //onPrepare: e.g. Authorized Site -> User-Login
     // e.g. Browser Pos & Size

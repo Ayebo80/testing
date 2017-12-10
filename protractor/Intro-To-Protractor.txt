@@ -84,5 +84,53 @@ nvmw use 6.5.0            # Use the specific version
 npm install jasmine-core --save-dev
 E:\IT\intro-to-protractor\
 npm install grunt --save-dev
+===================================================================================================================================
+2-5. Where Protractor Fits in the Testing Spectrum
+1) Unit Tests
+2) Integration Tests
+=> Protractors somewhere between 2+3
+3) User Acceptens Tests
+Similarities With Integration Tests(2)
++ Nothing is mocked out: Devs take Tools like Jasmin, XUnits, Libraries, 
+DEVS go through entire Stack of App and make sure data coming back out of DB is what they expect
++ Not limited to a particular unit
+Entire roundtrip API->DB->API
+Differences With Integration Tets(2)
++ No Acces To The Database, only able to interact with DB only UI
+
+Similarity With User Tests
++ Interacts with UI
++ Simulates a User (might go back, jump to different page)
++ Tests Workflows (i need to add a new event & provide details to a new event)
+Differences With User Tests
++ Different Data (only testing same format strings, but not testing real User Inputs)
+=> After Protractor Tests still NEED to do User Tests (No Replacement of User Tests)
+===================================================================================================================================
+3-1. Locators & Test Suites
+Protractor on top of Selenium, it can use own & Selenium Locators
+Specific Locators (by.*)
++ by.binding: {{binding-name}}
+<div/>{{name}}</div>					=> by.binding('name');
++ by.element:
+<input ng-model="name"/>				=> by.model('name');
++ by.css (class):
+<div class="primary header">Railroad Days</div>		=> by.css('.primary.header');
+#CSS-Selection on JQuery or CSS-Stylesheet: div, firstchild, id
++ by.buttonText:
+<button>Save</button>					=> by.buttonText('Save');
++ by.repeater:
+<ul>
+    <li ng-repeat="u in users">{{u.name}}</li>
+</ul>							=> by.repeater('u in users');
++ by.options:
+<select ng-options="r for r in roles"></select>		=> by.options('r for r in roles');
++ by.id: 
++ by.linkText: <a>-Element with Text inside it: by.linkText: find Link based on Text of Link
++ by.name: Input-Box of Name-Property of "myinput" => by.name('myinput');
++ by.tagName: HTML-TagName => find all divs, spans, inputboxes
++ by.xPath: traverse down through HTML document, and find 1st, 2nd... element
++ by.addLocator: let you build a CUSTOM LOCATOR specific to your CODE
+================================================================================================================================
+
 
 
