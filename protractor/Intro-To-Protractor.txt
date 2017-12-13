@@ -131,6 +131,64 @@ Specific Locators (by.*)
 + by.xPath: traverse down through HTML document, and find 1st, 2nd... element
 + by.addLocator: let you build a CUSTOM LOCATOR specific to your CODE
 ================================================================================================================================
+3.5. Test Suites
+Not All Tests Are Created Equal
+Areas Tested: Login, Create Event, Finding Event, Updating Event
+Types of Test: Smoke Tests (just look quickly Basic Functionality)
+Length of Tests: longer then Smoke Tests
 
+Suites in conf.js
+suites: {
+	suite1: 'path.to.tests',
+	suite2: 'path.to.different.tests',
+	suite3: 'more.tests',
+}
 
+SMOKE TEST:
+a group of tests that run pretty quick & hit application at high level 
+GOAL: make sure nothing major broken BEFORE dive down into deeper tests (Sanity-Test: is app running well enough to go in to do a deep dive with my tests)
+===========================================================================================================================================================
+3-6. Using Protractor as Part of a Development Workflow
+TDD => Smoke Test => Protractor => QA
+Software Development Life Cycle:
+Feature Branch => Write Code => *** Write Protractor *** => Merge Develop In => Build/Unit Tests => *** Run Protractor *** => Merge Into Develop 
+===========================================================================================================================================================
+4-1. Page Objects
+Problems with UI Testing (Button Moved, Problem With XY-Koordinaten Testing)
+Lots of Repetition
+Maintenance Headache (Maintenance easier with Page Objects)
++ Have to find all instances
++ Replace with the new name, selector or other code
++ Lots of time to keep tests in line with refactorings
+Broken Test
+===========================================================================================================================================================
+4-2. Option 1: Manually Updating References (Manual Maintenance)
+As your projects grows: 1 change in 1 page is covered by alot of tets: 1. Smoke Tests, 2. Integration Tests, 3. Detailed Tests
+===========================================================================================================================================================
+4-3. Option 2: Page Objects
+Page Object - A plain JS object that encapsulates the properties of an Angular template.
+
+Example Page Object:
+var createPage = function(){
+	this.name = element(by.model('name'));
+}
+
+createPage.name.sendKeys('example');
+============================================================================================================================================================
+4-4. Page Objects in Actions
+============================================================================================================================================================
+4-6. Challenges With Automated UI Testing
+UI Changes: use LOCATORS to grab element INSTEAD of PagePosition(x,y) OR CSS-Selector to get 1st child
+Repetition: 
+Easily Break Tests: Did the test break because code broke OR did the developer changed names
+OPTION1: Manual Maintenance
++ More work for the tester
++ Reduces confidence in the tests
+OPTION 2: Page Objects
++ Easier to maintain
++ DRYer tests
+Harness Your Powers
+1. Now have a FW to test Like a User
+2. Now have a FW to improve Test Efficiency (automated more efficient than manual)
+3. Eliminate Repitition
 

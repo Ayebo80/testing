@@ -31,7 +31,7 @@ describe('Adding a new event', function(){
 			var css = button.getAttribute('class');
 			
 			//console.log(css.isSelected)
-			expect(css).not.toMatch('enabled');
+			expect(css).not.toMatch('disabled');
         });
     });
 	
