@@ -9,6 +9,15 @@
 var util = require ('util')
 var error_occured = false;
 
+		var Testrail = require('../conf/node_modules/testrail-api');
+		var testrail = new Testrail({
+			host: 'https://ayebo.testrail.io',
+			user: 'ayebo@gmx.de',
+			password: 'ENYVQ3OeKTR24AmFPKLV-dZhWJt1X.sKLQl/QP.Ty'
+		});
+		
+
+
 describe ('To test the animal adoption flow', function() {
 	
 	beforeEach(function() {
@@ -16,7 +25,7 @@ describe ('To test the animal adoption flow', function() {
 	});
 	
 	//xit = IGNORE TEST
-	xit ('Should be able to adopt an animal', function() {
+/*	xit ('Should be able to adopt an animal', function() {
 		element(by.model('person.name')).sendKeys('I will subscribe');
 		var dynamicText = element(by.binding('person.name')).getText();
 		expect(dynamicText).toBe('I will subscribe');
@@ -29,6 +38,7 @@ describe ('To test the animal adoption flow', function() {
 		var thankYouText = element(by.css('h1')).getText();
 		expect(thankYouText).toBe('Thank you');
 	});
+	*/
 	
 	// Import and assign this file to value of home_page! Use with home_page.
 	var home_page = require('../page/home_page.js');
@@ -52,50 +62,32 @@ describe ('To test the animal adoption flow', function() {
 		expect(confirm_page.getTitle()).toBe('Thank you');
 		console.log('Page 3: confirm_page done');
 		
-		var v2 = home_page.AddNumbers(1,2);
-		console.log(v2);
-	});
-	
-    afterEach(function(){
-	
-		var Testrail = require('../conf/node_modules/testrail-api');
-		var testrail = new Testrail({
-			host: 'https://ayebo.testrail.io',
-			user: 'ayebo@gmx.de',
-			password: 'ENYVQ3OeKTR24AmFPKLV-dZhWJt1X.sKLQl/QP.Ty'
-		});
+		//var v2 = home_page.AddNumbers(1,2);
+		//console.log(v2);
 		
 		testrail.addResultsForCases(/*RUN_ID=*/1, /*CONTENT=*/{ "results": [{"case_id": 1, "status_id": 5, "comment": "this test has failed in protractor" }] }, function (err, results)
 		{
-			console.log(results);
-		});	
-	
-		//status_id
-		//1: Passed
-		//2: 
-		//3: 
-		//4: 
-		//5: Failed
-		
-		testrail.getUserByEmail(/*EMAIL=*/'ayebo@gmx.de', function (err, user) {
-			console.log(testrail.getUsersByEmail);
-			console.log(user);
+			console.log("TC-1 Geschrieben!!!!");
 		});
+		
+	});
+	
+	
+	
+	
+    afterEach(function(){
+		
+		jasmine.getEnv().addReporter(new function() {
+			this.specDone = function(result) {
+				if (result.failedExpectations.length > 0) {
+				// Test FAILURE ACTION GOES HERE
+				}
+			};
+	});
+
+//"status_name":(jasmine.results.spec.failedExpectations.length === 0 ? "passed" : "failed")
+
     });
-	
-	// Update a case 
-//	testrail.updateCase(/*CASE_ID=*/1, /*CONTENT=*/{}, function (err, testcase) {
-//		console.log(testcase);
-//	});
-	
-    // Get results for case
-//	testrail.getResultsForCase(/*RUN_ID=*/1, /*CASE_ID=*/1, /*FILTERS=*/{}, function (err, results) {
-//		console.log(results);
-//	});
-
-	//Update a case
-//	testrail.updateCase(/*CASE_ID=*/1, /*CONTENT=*/{}, function (err, testcase) {
-//		console.log(testcase);
-//	});
-
 });
+		
+
