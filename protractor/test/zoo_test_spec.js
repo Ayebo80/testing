@@ -28,7 +28,7 @@ describe ('To test the animal adoption flow', function() {
 		var thankYouText = element(by.css('h1')).getText();
 		expect(thankYouText).toBe('Thank you');
 	});
-
+	
 	// Import and assign this file to value of home_page! Use with home_page.
 	var home_page = require('../page/home_page.js');
 	
@@ -49,4 +49,5 @@ describe ('To test the animal adoption flow', function() {
 		var v2 = home_page.AddNumbers(1,2);
 		console.log(v2);
 	});
+	
 });
