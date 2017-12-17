@@ -1,21 +1,59 @@
-//As replied in Part 3 of this video series: Hey Waheed, strictly speaking since this is JavaScript there really is no difference when 
-//using ' or ", they both mean the same thing. However when using together then this can create an issue. When using together you must 
-//use them embedded in one another e.g. "hello 'world'". I hope this answers your question.
-
-// ADVANTAGES using Page Objects
-// 1) Maintaining becomes easier
-// 2) Easier to write & manage tests (duplication will reduce)
-
 var util = require ('util')
-var error_occured = false;
 
-		var Testrail = require('../conf/node_modules/testrail-api');
-		var testrail = new Testrail({
-			host: 'https://ayebo.testrail.io',
-			user: 'ayebo@gmx.de',
-			password: 'ENYVQ3OeKTR24AmFPKLV-dZhWJt1X.sKLQl/QP.Ty'
-		});
-		
+var Testrail = require('../conf/node_modules/testrail-api');
+
+var testrail = new Testrail({
+	host: 'https://ayebo.testrail.io',
+	user: 'ayebo@gmx.de',
+	password: 'ENYVQ3OeKTR24AmFPKLV-dZhWJt1X.sKLQl/QP.Ty'
+});
+	
+//status_id: 5: "failed", 1: "passed"	
+//		testrail.addResultsForCases(/*RUN_ID=*/1, /*CONTENT=*/{ "results": [{"case_id": 1, "status_id": 5, "comment": "this test has failed in protractor" }] }, function (err, results)
+//		{
+//			console.log("TC-1 Geschrieben!!!!");
+//		});
+	
+
+var myReporter = {
+
+  jasmineStarted: function(suiteInfo) {
+    console.log('Running suite with ' + suiteInfo.totalSpecsDefined);
+  },
+
+  suiteStarted: function(result) {
+    console.log('Suite started: ' + result.description + ' whose full description is: ' + result.fullName);
+  },
+
+  specStarted: function(result) {
+    console.log('Spec started: ' + result.description + ' whose full description is: ' + result.fullName);
+  },
+
+  specDone: function(result) {
+    console.log('Spec: ' + result.description + ' was ' + result.status);
+    for(var i = 0; i < result.failedExpectations.length; i++) {
+      console.log('Failure: ' + result.failedExpectations[i].message);
+      console.log(result.failedExpectations[i].stack);
+    }
+	  console.log(result.passedExpectations.length);
+  },
+  
+  //suiteDone is invoked when all of the child specs and suites for a given suite have been run
+  suiteDone: function(result) {
+    console.log('Suite: ' + result.description + ' was ' + result.status);
+    for(var i = 0; i < result.failedExpectations.length; i++) {
+      console.log('AfterAll ' + result.failedExpectations[i].message);
+      console.log(result.failedExpectations[i].stack);
+    }
+  },
+  
+  jasmineDone: function() {
+    console.log('Finished suite');
+  }
+};
+
+jasmine.getEnv().addReporter(myReporter);
+
 
 
 describe ('To test the animal adoption flow', function() {
@@ -44,7 +82,7 @@ describe ('To test the animal adoption flow', function() {
 	var home_page = require('../page/home_page.js');
 	
 	it ('Should be able to adopt an animal by page objects', function() {
-		home_page.enterFieldValue('You will subscribe');
+		home_page.enterFieldValue('DDDDDDYou will subscribe');
 		var getHomePageText = home_page.getDynamicText();
 		expect(getHomePageText).toBe('You will subscribe');
 		
@@ -59,35 +97,33 @@ describe ('To test the animal adoption flow', function() {
 		var confirm_page = animal_page.clickContinue();
 		console.log('Page 2: animal_page done');
 		
-		expect(confirm_page.getTitle()).toBe('Thank you');
+		//no_error_occured = expect(confirm_page.getTitle()).toBe('Thank you');
 		console.log('Page 3: confirm_page done');
 		
 		//var v2 = home_page.AddNumbers(1,2);
 		//console.log(v2);
 		
-		testrail.addResultsForCases(/*RUN_ID=*/1, /*CONTENT=*/{ "results": [{"case_id": 1, "status_id": 5, "comment": "this test has failed in protractor" }] }, function (err, results)
-		{
-			console.log("TC-1 Geschrieben!!!!");
-		});
+		//status_id: 5: "failed", 1: "passed"	
+//		testrail.addResultsForCases(/*RUN_ID=*/1, /*CONTENT=*/{ "results": [{"case_id": 1, "status_id": (no_error_occured = true ? 1 : 5), "comment": "this test has failed in protractor" }] }, function (err, results)
+//		{
+//			console.log("TC-1 Geschrieben!!!!");
+//		});
 		
 	});
 	
+	//"status_name":(jasmine.results.spec.failedExpectations.length === 0 ? "passed" : "failed")
 	
-	
-	
-    afterEach(function(){
+//    afterEach(function(){
 		
-		jasmine.getEnv().addReporter(new function() {
-			this.specDone = function(result) {
-				if (result.failedExpectations.length > 0) {
+		//jasmine.getEnv().addReporter(new function() {
+//			this.suiteDone = function(result) {
+				//if (result.failedExpectations.length > 0) {
 				// Test FAILURE ACTION GOES HERE
-				}
-			};
-	});
-
-//"status_name":(jasmine.results.spec.failedExpectations.length === 0 ? "passed" : "failed")
-
-    });
+//				}
+//			};
+//	});
+//    });
+	
 });
 		
 
