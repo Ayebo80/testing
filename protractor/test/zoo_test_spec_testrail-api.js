@@ -82,7 +82,7 @@ describe ('To test the animal adoption flow', function() {
 	var home_page = require('../page/home_page.js');
 	
 	it ('Should be able to adopt an animal by page objects', function() {
-		home_page.enterFieldValue('DDDDDDYou will subscribe');
+		home_page.enterFieldValue('DDDDDDDDYou will subscribe');
 		var getHomePageText = home_page.getDynamicText();
 		expect(getHomePageText).toBe('You will subscribe');
 		
@@ -104,10 +104,10 @@ describe ('To test the animal adoption flow', function() {
 		//console.log(v2);
 		
 		//status_id: 5: "failed", 1: "passed"	
-//		testrail.addResultsForCases(/*RUN_ID=*/1, /*CONTENT=*/{ "results": [{"case_id": 1, "status_id": (no_error_occured = true ? 1 : 5), "comment": "this test has failed in protractor" }] }, function (err, results)
-//		{
-//			console.log("TC-1 Geschrieben!!!!");
-//		});
+		testrail.addResultsForCases(/*RUN_ID=*/1, /*CONTENT=*/{ "results": [{"case_id": 1, "status_id": 5, "comment": "für martin test" }] }, function (err, results)
+		{
+			console.log("TC-1 Geschrieben!!!!");
+		});
 		
 	});
 	
