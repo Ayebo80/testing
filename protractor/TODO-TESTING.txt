@@ -1,0 +1,34 @@
+I) Mehr als 1 Browser gleichzeitig (auch auf versch. IPs) testen:
+(mein Test: Abschnitt multiCapabilities in https://github.com/Ayebo80/testing/tree/master/protractor/conf/conf-multicapabilities.js)
+https://www.credera.com/blog/technology-insights/java/testing-angularjs-part-4-setting-e2e-testing-protractor/
+
+=====================================================================================================================================
+II) Mobile Testing mit Apium:
+http://blog.somethingclassic.net/appium-protractor-real-device-automated-testing-mac-osios-10-3/
+https://moduscreate.com/blog/hybrid-application-testing-with-protractor-and-appium/
+http://tombuyse.com/end-to-end-testing-an-ionic-application-with-appium-and-protractor/
+
+npm install appium -g
+npm install wd -g
+
+Verify Prerequisites are met with Appium Doctor
+1. appium-doctor is a handy utility which verifies you have all of the necessary dependencies top properly run Appium against 
+the environment you specify.  
+npm install -g appium-doctor #to install Appium Doctor
+2. Run appium doctor with  
+appium-doctor --ios
+appium-doctor --android
+3. Examine the output. If Appium Doctor complains that you are missing something, verify you never missed a step.
+
+FEHLER: ANDROID_HOME is NOT set! JAVA_HOME is NOT set! => Umgebungsvariablen system-weit setzen
+ANDROID_HOME => C:\Users\Ayebo\AppData\Local\Android\Sdk
+JAVA_HOME => C:\Program Files\Java\jdk1.8.0_152
+PATH => ERWEITERN um C:\Program Files\Java\jdk1.8.0_152\bin
+!!! DANACH: neue CMD öffnen & appium-doctor --android eingeben
+========================================================================================================
+Android Studio (beinhaltet SDK & Virtual Device (Emulator))
+https://developer.android.com/studio/index.html
+=> Nach der Installation Android 5.1. (Ayebos Handy) nach-installieren unter Default Settings
+
+===================================================================================================================================
+III) node-testrail-api
