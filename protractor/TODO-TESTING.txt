@@ -9,30 +9,32 @@ https://moduscreate.com/blog/hybrid-application-testing-with-protractor-and-appi
 http://tombuyse.com/end-to-end-testing-an-ionic-application-with-appium-and-protractor/
 https://jjasonclark.com/how-to-setup-node-behind-web-proxy/
 
-# Install Python
-https://www.python.org/downloads/windows/	=> Windows x86-64 executable installer
-# ERR: Can't find Python executable "python", you can set the PYTHON env variable.
-
-# PROXY: Systemeigenschaften->Umgebungsvariablen
-http_proxy		http://137.250.203.140:8080
-https_proxy	http://137.250.203.140:8080
-PYTHON 		C:\Program Files\Python36
-
-# Setup in CMD:
-set http_proxy=http://137.250.203.140:8080
-set https_proxy=http://137.250.203.140:8080
-set python=E:\IT\Python36
-
 # How to setup Node.js and Npm behind a corporate web proxy
 npm config list
-npm config set python E:\IT\Python36
+npm config set python C:\Python27\python.exe
 npm config set proxy http://137.250.203.140:8080
 npm config set https-proxy http://137.250.203.140:8080
 
 npm install appium -g
 npm install wd -g
-npm install -g appium-doctor #to install Appium Doctor
-2. Run appium doctor with  
+npm install appium-doctor -g #to install Appium Doctor
+# On ERROR: gyp err stack error can't find python executable python you can set the python env variable:
+https://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm
+UPDATED 02/2016
+Some npm plugins need node-gyp to be installed.
+However, node-gyp has it's own dependencies (from the github page):
+You will also need to install:
+On Windows:
++ Python (v2.7 recommended, v3.x.x is not supported)
+  + Make sure that you have a PYTHON environment variable, in it is set to drive:\path\python.exe not to a folder
++ Windows 7/8:
+  + Microsoft Visual Studio C++2013 for Windows Deskotp (Express version works well)
+	(http://download.microsoft.com/download/7/2/E/72E0F986-D247-4289-B9DC-C4FB07374894/wdexpress_full.exe)
++ Other OS: see https://github.com/Ayebo80/testing/tree/master/protractor/error-python-not-found_on_different_OS.png
+
+# Change to the npm folder:
+C:\Users\maurerpa-Admin\AppData\Roaming\npm
+2. Run appium doctor with 
 appium-doctor --ios
 appium-doctor --android
 3. Examine the output. If Appium Doctor complains that you are missing something, verify you never missed a step.
@@ -40,12 +42,13 @@ appium-doctor --android
 FEHLER: ANDROID_HOME is NOT set! JAVA_HOME is NOT set! => Umgebungsvariablen system-weit setzen
 ANDROID_HOME => C:\Users\Ayebo\AppData\Local\Android\Sdk
 JAVA_HOME => C:\Program Files\Java\jdk1.8.0_152
-PATH => ERWEITERN um C:\Program Files\Java\jdk1.8.0_152\bin
+PATH => ERWEITERN um ;C:\Program Files\Java\jdk1.8.0_152\bin
 !!! DANACH: neue CMD öffnen & appium-doctor --android eingeben
 ========================================================================================================
 Android Studio (beinhaltet SDK & Virtual Device (Emulator))
 https://developer.android.com/studio/index.html
 => Nach der Installation Android 5.1. (Ayebos Handy) nach-installieren unter Default Settings
-
+C:\Program Files\Android\Android Studio
+C:\Users\maurerpa-Admin\AppData\Local\Android\Sdk
 ===================================================================================================================================
 III) node-testrail-api
