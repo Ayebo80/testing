@@ -7,6 +7,7 @@ II) Mobile Testing mit Apium:
 http://blog.somethingclassic.net/appium-protractor-real-device-automated-testing-mac-osios-10-3/
 https://moduscreate.com/blog/hybrid-application-testing-with-protractor-and-appium/
 http://tombuyse.com/end-to-end-testing-an-ionic-application-with-appium-and-protractor/
+https://jjasonclark.com/how-to-setup-node-behind-web-proxy/
 
 # Install Python
 https://www.python.org/downloads/windows/	=> Windows x86-64 executable installer
