@@ -8,12 +8,28 @@ http://blog.somethingclassic.net/appium-protractor-real-device-automated-testing
 https://moduscreate.com/blog/hybrid-application-testing-with-protractor-and-appium/
 http://tombuyse.com/end-to-end-testing-an-ionic-application-with-appium-and-protractor/
 
+# Install Python
+https://www.python.org/downloads/windows/	=> Windows x86-64 executable installer
+# ERR: Can't find Python executable "python", you can set the PYTHON env variable.
+
+# PROXY: Systemeigenschaften->Umgebungsvariablen
+http_proxy		http://137.250.203.140:8080
+https_proxy	http://137.250.203.140:8080
+PYTHON 		C:\Program Files\Python36
+
+# Setup in CMD:
+set http_proxy=http://137.250.203.140:8080
+set https_proxy=http://137.250.203.140:8080
+set python=E:\IT\Python36
+
+# How to setup Node.js and Npm behind a corporate web proxy
+npm config list
+npm config set python E:\IT\Python36
+npm config set proxy http://137.250.203.140:8080
+npm config set https-proxy http://137.250.203.140:8080
+
 npm install appium -g
 npm install wd -g
-
-Verify Prerequisites are met with Appium Doctor
-1. appium-doctor is a handy utility which verifies you have all of the necessary dependencies top properly run Appium against 
-the environment you specify.  
 npm install -g appium-doctor #to install Appium Doctor
 2. Run appium doctor with  
 appium-doctor --ios
