@@ -6,8 +6,18 @@ https://www.credera.com/blog/technology-insights/java/testing-angularjs-part-4-s
 II) Mobile Testing mit Apium:
 http://blog.somethingclassic.net/appium-protractor-real-device-automated-testing-mac-osios-10-3/
 https://moduscreate.com/blog/hybrid-application-testing-with-protractor-and-appium/
+https://github.com/ModusCreateOrg/protractorStarterApp
 http://tombuyse.com/end-to-end-testing-an-ionic-application-with-appium-and-protractor/
+https://github.com/tombuyse/ionic-appium-protractor-example
 https://jjasonclark.com/how-to-setup-node-behind-web-proxy/
+https://github.com/angular/protractor/blob/master/docs/mobile-setup.md
+
+# Change to the npm folder:
+C:\Users\maurerpa-Admin\AppData\Roaming\npm
+
+# PROXY:
+set http_proxy=http://137.250.203.140:8080
+set https_proxy=http://137.250.203.140:8080
 
 # How to setup Node.js and Npm behind a corporate web proxy
 npm config list
@@ -15,9 +25,14 @@ npm config set python C:\Python27\python.exe
 npm config set proxy http://137.250.203.140:8080
 npm config set https-proxy http://137.250.203.140:8080
 
+# Umgebungsvariablen system-weit setzen
+HTTP_PROXY	http://137.250.203.140:8080
+HTTPS_PROXY	http://137.250.203.140:8080
+
 npm install appium -g
 npm install wd -g
 npm install appium-doctor -g #to install Appium Doctor
+
 # On ERROR: gyp err stack error can't find python executable python you can set the python env variable:
 https://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm
 UPDATED 02/2016
@@ -33,7 +48,7 @@ On Windows:
 + Other OS: see https://github.com/Ayebo80/testing/tree/master/protractor/error-python-not-found_on_different_OS.png
 
 # Change to the npm folder:
-C:\Users\maurerpa-Admin\AppData\Roaming\npm
+cd C:\Users\maurerpa-Admin\AppData\Roaming\npm
 2. Run appium doctor with 
 appium-doctor --ios
 appium-doctor --android
@@ -43,7 +58,28 @@ FEHLER: ANDROID_HOME is NOT set! JAVA_HOME is NOT set! => Umgebungsvariablen sys
 ANDROID_HOME => C:\Users\Ayebo\AppData\Local\Android\Sdk
 JAVA_HOME => C:\Program Files\Java\jdk1.8.0_152
 PATH => ERWEITERN um ;C:\Program Files\Java\jdk1.8.0_152\bin
-!!! DANACH: neue CMD öffnen & appium-doctor --android eingeben
+
+https://www.howtogeek.com/125769/how-to-install-and-use-abd-the-android-debug-bridge-utility/
+# To test whether ADB is working properly, connect your Android device to your computer using a USB cable and run the following command:
+cd C:\Users\maurerpa-Admin\AppData\Local\Android\Sdk\platform-tools
+adb devices
+# You should see a device in the list. If your device is connected but nothing appears in the list, youâ€™ll need to install the appropriate drivers.
+http://developer.samsung.com/galaxy/others/android-usb-driver-for-windows
+C:\Program Files\SAMSUNG\USB Drivers
+
+#
+webdriver-manager start --android
+
+#Start the appium REST server 
+appium
+
+#Run your Protractor script(s)
+https://github.com/angular/protractor/blob/master/docs/mobile-setup.md
+https://stackoverflow.com/questions/21287982/how-to-run-protractor-scripts-on-android-and-ios
+
+#Setup Android Development Environment, If necessary create Android Virtual Device
+http://spring.io/guides/gs/android/
+
 ========================================================================================================
 Android Studio (beinhaltet SDK & Virtual Device (Emulator))
 https://developer.android.com/studio/index.html

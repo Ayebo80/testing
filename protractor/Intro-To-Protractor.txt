@@ -9,8 +9,9 @@ Testing Framework
 Other Helpful Courses
 - AngularJS: Get Started - Scott Allen
 - AngularJS Fundamentals - Joe Eames
-- Testing Client Side JavaScript - Joe Eames
-- Testing AngularJS from Scratch - Jesse Liberty
+- Testing Client Side JavaScript - Joe Eames - 12.02.2013
+- Testing AngularJS from Scratch - Jesse Liberty - 09.07.2014
+
 What is Protractor?
 End-to-End					Unit Testing
 - Interact with the entire application stack	- Interact with a single, isolated unit at a time

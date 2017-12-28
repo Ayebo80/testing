@@ -17,7 +17,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 # PROXY:
 set http_proxy=http://137.250.203.140:8080
 set https_proxy=http://137.250.203.140:8080
-9. CMD: webdriver-manager update	# When there are ERRORS => update
+9. CMD: 	# When there are ERRORS => update
 #Also updates chromedriver...Chrome is default browser
 10. CMD: webdriver-manager start
 # Starts our Selenium Webdriver Server, keep CMD open & dont stop Selenium Webdriver Server

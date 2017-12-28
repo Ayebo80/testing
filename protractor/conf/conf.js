@@ -13,7 +13,7 @@ exports.config = {
   
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ['../test/zoo_test_spec_testrail-api.js'],
+  specs: ['../test/new.event.js'],
   
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
