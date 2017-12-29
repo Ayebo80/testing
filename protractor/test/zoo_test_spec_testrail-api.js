@@ -108,22 +108,5 @@ describe ('To test the animal adoption flow', function() {
 		{
 			console.log("TC-1 Geschrieben!!!!");
 		});
-		
 	});
-	
-	//"status_name":(jasmine.results.spec.failedExpectations.length === 0 ? "passed" : "failed")
-	
-//    afterEach(function(){
-		
-		//jasmine.getEnv().addReporter(new function() {
-//			this.suiteDone = function(result) {
-				//if (result.failedExpectations.length > 0) {
-				// Test FAILURE ACTION GOES HERE
-//				}
-//			};
-//	});
-//    });
-	
 });
-		
-
