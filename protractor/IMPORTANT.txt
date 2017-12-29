@@ -126,7 +126,9 @@ npm config set https-proxy http://137.250.203.140:8080
 HTTP_PROXY	http://137.250.203.140:8080
 HTTPS_PROXY	http://137.250.203.140:8080
 ============================================================================================================================================================
-V) IF-THEN-ELSE WITH JASMINE:
+V) FAIL/PASS-Logik WITH JASMINE:
+*** MEINE TEST-FILES: https://github.com/Ayebo80/testing/tree/master/protractor/test/zoo_test_spec_fail-pass-jasmine.js
+
 https://jasmine.github.io/2.1/custom_matcher.html
 https://github.com/jasmine/jasmine/blob/master/src/core/ExpectationResult.js
 https://github.com/jasmine/jasmine/issues/1127
