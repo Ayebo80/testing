@@ -1,3 +1,9 @@
+﻿=====================================================================================================================================
+https://jasmine.github.io/2.1/custom_matcher.html
+https://github.com/jasmine/jasmine/blob/master/src/core/ExpectationResult.js
+https://github.com/jasmine/jasmine/issues/1127
+
+====================================================================================================================================
 I) Mehr als 1 Browser gleichzeitig (auch auf versch. IPs) testen:
 (mein Test: Abschnitt multiCapabilities in https://github.com/Ayebo80/testing/tree/master/protractor/conf/conf-multicapabilities.js)
 https://www.credera.com/blog/technology-insights/java/testing-angularjs-part-4-setting-e2e-testing-protractor/
