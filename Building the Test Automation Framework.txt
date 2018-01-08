@@ -1,2 +1,55 @@
 https://www.youtube.com/watch?v=y30Rz-w1fPU&list=PLXOcVQr8g7b9xpdrLnlj0s0mO4nZx7Mt6&index=1
 1) Introduction to Building the Test Automation Framework
++ Distributed Test Automation Framework
++ Based on CI and Dev Ops Principals
++ Making YOUR Life Easier as a Tester
+
+1. AWS(http://aws.amazon.com): Platform to build WIN/LINUX-Testautomation-Enviroment
+2. JENKINS(https://jenkins.io/): CI-Tools to build App on the TEST & triger all automated Tests
+3. SELENIUM(http://docs.seleniumhq.org/): Test-Automation-Tool for GUI/Browser-Automated Tests
+4. GIT+GITHUB: Source-Code-Tool to retrieve Source from to build App
+5. SOAPUI(https://www.soapui.org/): Test-Automation-Tool for API-Based-Automation-Test
+6. JMETER(http://jmeter.apache.org/): Load-Test-Tool to asses Performance of App on the TEST
+WHAT are we Testing: ROCKET.CHAT(https://www.rocket.chat): Cross-Browser, Cross-Platform, Mobile/Desktop
+===============================================================================================================
+2) A Practical Introduction to Amazon Web Services for Testers
+MASTER: Control Machine (Windows 2008)
+CLIENT: App-Under-Test Machine (Ubuntu)
+SIX KEY ASPECTS TO SETTING UP AWS
+1. Creating an AWS Account
+2. Configuring Security Groups
+3. Creating Key Pairs
+4. Creating Virtual Machines (Instances)
+5. Connecting and configuring Putty / SSH (Windows<->Ubuntu)
+6. Monitoring Usage
+WHY USE AWS?
+1. It's fast to get setup
+2. No provisioning hardware and installing operating systems
+3. Increase capacity or shut down on demand
+4. Pay only what you use (No buying everything up front and having kit sitting around dormant)
+PREREQUISITES
+1. Windows machine with RDP or MAC equivalent
+2. Credit Card !!!WE WILL USE FREE TIER
+3. Your Telephone number
+MODUL PARTS:
+1) Creating an AWS Account
+2) AWS Fundamentals
+3) Configuring Security Groups
+4) Creating a Security Key Pair
+5) Running up the Windows Intance
+6) Running up the Ubuntu Linux Instance
+7) Connecting to the Windows Master Machine
+8) Installing Putty and SSH
+9) Connecting to the Unix Client Machine
+10) The Difference Between Terminate and Stop
+11) How to Check Your AWS Spend
+------------------------------------------------------------------------------------------------------------
+1) Creating an AWS Account (http://aws.amazon.com)
+patrickmaurer@gmx.de
+PMaurer80
+------------------------------------------------------------------------------------------------------------
+2) AWS Fundamentals
+1. Services
+2. Zones & Regions
+
+
