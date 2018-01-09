@@ -45,11 +45,24 @@ MODUL PARTS:
 11) How to Check Your AWS Spend
 ------------------------------------------------------------------------------------------------------------
 1) Creating an AWS Account (http://aws.amazon.com)
-patrickmaurer@gmx.de
-PMaurer80
 ------------------------------------------------------------------------------------------------------------
 2) AWS Fundamentals
 1. Services
 2. Zones & Regions
-
-
+Virtual Private Clouds, Security Groups & Key Pairs are linked to a particular region => Select Region & stick to that Region
+3. Management Console
+4. EC2
+5. EC2 Instances
+t2.micro: 1vCPU, 6CPU Credits/hour, 1Mem(GiB), EBS-Only Storage
+6. AMI (Amazon Machine Images)
+AMI: predifined image allready installed
+Instances => Launch Instance=> Free tier only => 
+7. EBS (Elastic Block Storage)
+A VM needs Storage, AWS provides alot of options: most common is EBS
+EBS is another AWS Services, provides Storage Volumnes that can be attached to running Instances
+Data stored is persistent
++ EBS => Volumes => Column "Monitoring" you can se which Instance they are attached to
++ Instances => Instances => Tab "Description" => Root/Block device(s)
+8. Network and Security
+Each Instance is created in a Virtual Private Cloud => VPC ID
+!!! Every Instance we create will be put in the same VPC
